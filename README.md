@@ -63,51 +63,12 @@ Además, se implementaron validaciones reactivas, como la evaluación en tiempo 
 ### Dashboard Principal y SPA
 > Panel de control mostrando la pantalla de bienvenida y el funcionamiento del menú lateral.
 
-<!-- REEMPLAZA EL ENLACE DE ABAJO CON LA RUTA DE TU IMAGEN -->
-![Dashboard Principal](img/dashboard.png)
+<img width="1901" height="916" alt="image" src="https://github.com/user-attachments/assets/3d7efb9c-4260-4d0e-bab2-19f2a8821ce9" />
+
 
 ### Notificaciones y Modales
 > Ejecución de componentes Bootstrap: Toasts de validación y Modales de cálculo de edad.
 
-<!-- REEMPLAZA EL ENLACE DE ABAJO CON LA RUTA DE TU IMAGEN -->
-![Modales y Toasts](img/modal.png)
-Librería de Validaciones (utileria.js)
-Se construyó un módulo independiente para garantizar la integridad de los datos capturados:
+<img width="751" height="447" alt="image" src="https://github.com/user-attachments/assets/388061b7-5246-462a-8857-f03376fc73dd" />
+<img width="772" height="542" alt="image" src="https://github.com/user-attachments/assets/42cdbe53-49dc-4367-91d9-b580bcd456f6" />
 
-La función validarCorreo evalúa la cadena contra una Expresión Regular (Regex) que exige un formato de email estricto.
-
-La función validarPassword asegura que la longitud de la cadena sea estrictamente mayor o igual a 6 caracteres.
-
-Interacciones del Dashboard y Eventos Dinámicos (dashboard.js)
-
-Navegación y Animaciones: El Sidebar responde a eventos de clic alterando clases CSS dedicadas, lo que permite una transición suave de ancho, relleno y opacidad en lugar de cortes visuales abruptos.
-
-Enrutamiento Interno (SPA): El panel central funciona bajo el concepto de Single Page Application. Al iniciar, presenta una pantalla de bienvenida. Mediante escuchadores de eventos en el menú lateral, el sistema manipula la clase 'd-none' para ocultar y mostrar dinámicamente el módulo de Captura de Usuarios o el de Registro de Alumnos.
-
-Notificaciones Flotantes (Toasts): Las clásicas alertas del navegador fueron reemplazadas por el componente Toast de Bootstrap. El sistema inyecta colores contextuales (verde para éxito, rojo para error) y modifica el mensaje de la notificación en tiempo real según el resultado de la validación de credenciales.
-
-Validación reactiva: El campo del Número de Control implementa un evento tipo 'input', el cual evalúa en tiempo real cada tecla presionada. Si la longitud es distinta a 6 dígitos exactos, muestra un mensaje de error reactivo.
-
-Lógica algorítmica de edad: Al presionar el botón de verificación, el sistema convierte el valor a un número entero y evalúa la mayoría de edad, inyectando la conclusión textual dentro del cuerpo del Modal antes de forzar su aparición en pantalla.
-
-PROCESO DE CREACION Y DESARROLLO
-Fase 1: Construcción de la arquitectura base del login y almacenamiento de la sesión en JavaScript.
-Fase 2: Diseño del esqueleto index.html y montaje de la barra de navegación superior.
-Fase 3: Segmentación de la pantalla para el menú lateral colapsable y los contenedores de formularios.
-Fase 4: Maquetación de tarjetas de captura y enlace con la librería de validaciones utileria.js.
-Fase 5: Construcción de la lógica condicional del número de control y la calculadora de edad con el Modal.
-Fase 6: Pulido de la Experiencia de Usuario (UX) separando los formularios en vistas independientes, animando el despliegue del menú lateral e implementando notificaciones Toast dinámicas.
-
-CAPTURAS DE PANTALLA DEL SISTEMA EN ACCION
-
-Pantalla de Login
-[Inserta aquí la imagen login.png]
-Vista del portal de acceso donde se procesa la validación de credenciales.
-
-Dashboard Principal y SPA
-[Inserta aquí la imagen dashboard.png]
-Panel de control mostrando la pantalla de bienvenida y el funcionamiento del menú lateral con transiciones.
-
-Notificaciones y Modales
-[Inserta aquí la imagen modal.png]
-Ejecución exitosa de los componentes avanzados de Bootstrap (Toasts de validación y Modales de cálculo de edad).
