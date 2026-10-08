@@ -21,7 +21,6 @@
 </head>
 <body class="bg-light">
 
-    <!-- Navbar de Yahel -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <button class="btn btn-outline-light me-3" id="btnHamburguesa">☰</button>
@@ -43,12 +42,13 @@
     </nav>
 
     <div class="d-flex" style="min-height: calc(100vh - 56px);">
-        <!-- Tu Sidebar -->
+        <!-- Sidebar -->
         <div id="sidebar" class="bg-dark text-white p-3" style="width: 250px;">
             <ul class="nav flex-column">
                 <li class="nav-item">
                     <a class="nav-link text-white dropdown-toggle" href="#" data-bs-toggle="collapse" data-bs-target="#menuUsuarios">Usuarios</a>
                     <div class="collapse" id="menuUsuarios">
+                        <!-- Enlace que mostrará los formularios -->
                         <ul class="nav flex-column ms-3">
                             <li><a class="nav-link text-light" href="#" id="linkCaptura">Captura</a></li>
                         </ul>
@@ -57,50 +57,61 @@
             </ul>
         </div>
 
-        <!-- Tus Formularios -->
+        <!-- Contenido principal -->
         <div class="p-4 w-100">
-            <div id="seccionCaptura" class="card mb-4">
-                <div class="card-header bg-primary text-white">Captura de Usuarios</div>
-                <div class="card-body">
-                    <form id="formCaptura">
-                        <div class="mb-3">
-                            <label class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="capNombre" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Correo</label>
-                            <input type="email" class="form-control" id="capCorreo" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="capPassword" required>
-                        </div>
-                        <button type="submit" class="btn btn-success">Guardar Usuario</button>
-                    </form>
+            
+            <!-- NUEVO: Mensaje de Bienvenida Inicial -->
+            <div id="mensajeBienvenida" class="text-center mt-5">
+                <h1 class="display-4 text-primary fw-bold">Bienvenido al sistema</h1>
+                <p class="fs-5 mt-3 text-secondary">Todos los derechos reservados a Carlos Yahel y Mario Eduardo</p>
+            </div>
+
+            <!-- CONTENEDOR MODIFICADO: Agrupa los formularios y los oculta inicialmente -->
+            <div id="contenedorFormularios" class="d-none">
+                <div id="seccionCaptura" class="card mb-4">
+                    <div class="card-header bg-primary text-white">Captura de Usuarios</div>
+                    <div class="card-body">
+                        <form id="formCaptura">
+                            <div class="mb-3">
+                                <label class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="capNombre" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Correo</label>
+                                <input type="email" class="form-control" id="capCorreo" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="capPassword" required>
+                            </div>
+                            <button type="submit" class="btn btn-success">Guardar Usuario</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header bg-info text-white">Registro de Alumnos</div>
+                    <div class="card-body">
+                        <form id="formAlumnos">
+                            <div class="mb-3">
+                                <label class="form-label">Número de Control (6 dígitos exactos)</label>
+                                <input type="number" class="form-control" id="numControl" required>
+                                <div id="errorControl" class="text-danger d-none small mt-1">El número debe tener exactamente 6 dígitos.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Edad del alumno</label>
+                                <input type="number" class="form-control" id="edadAlumno" required>
+                            </div>
+                            <button type="button" class="btn btn-dark" id="btnVerificarEdad">Verificar Edad</button>
+                        </form>
+                    </div>
                 </div>
             </div>
 
-            <div class="card">
-                <div class="card-header bg-info text-white">Registro de Alumnos</div>
-                <div class="card-body">
-                    <form id="formAlumnos">
-                        <div class="mb-3">
-                            <label class="form-label">Número de Control (6 dígitos exactos)</label>
-                            <input type="number" class="form-control" id="numControl" required>
-                            <div id="errorControl" class="text-danger d-none small mt-1">El número debe tener exactamente 6 dígitos.</div>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Edad del alumno</label>
-                            <input type="number" class="form-control" id="edadAlumno" required>
-                        </div>
-                        <button type="button" class="btn btn-dark" id="btnVerificarEdad">Verificar Edad</button>
-                    </form>
-                </div>
-            </div>
         </div>
     </div>
 
-    <!-- Tu Modal -->
+    <!-- Modal -->
     <div class="modal fade" id="modalEdad" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
