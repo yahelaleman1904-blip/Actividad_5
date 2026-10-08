@@ -1,13 +1,7 @@
-¡Claro que sí, Mario! Como le agregamos el comportamiento de "Single Page Application" (las vistas que cambian sin recargar), la animación suave y los Toasts, el nivel técnico del proyecto subió bastante. Es justo que el profesor lo lea en la documentación para que se den cuenta de todo el trabajo extra.
-
-Aquí tienes el texto del README actualizado. Recuerda que, como me pediste antes, le quité todos los símbolos de formato (# y **) para que quede como un documento de texto completamente limpio y sobrio.
-
-Copia este bloque y reemplaza todo lo que tengas en tu archivo README.md:
-
 SISTEMA DE CONTROL Y GESTION DE USUARIOS
 
 INTEGRANTES DEL EQUIPO
-Yahel Aleman
+Carlos Yahel Aleman Cruz
 Mario Eduardo Grajales Ramirez
 
 DESCRIPCION DETALLADA DEL PROYECTO
