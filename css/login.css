@@ -1,8 +1,41 @@
 /* css/login.css */
 body {
-    background-color: #f4f6f9;
+    background-color: #FFEA00; /* Fondo amarillo neón */
 }
+
 .card {
-    border: none;
-    border-radius: 10px;
+    border: 4px solid #000;
+    border-radius: 0 !important; /* Esquinas afiladas */
+    box-shadow: 12px 12px 0px #000 !important; /* Sombra sólida brutalista */
+    background-color: #FFF;
+}
+
+.form-control {
+    border: 3px solid #000;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    border-color: #000;
+    background-color: #E0FFFF;
+    box-shadow: 6px 6px 0px #FF00FF; /* Sombra rosa al escribir */
+}
+
+.btn-primary {
+    background-color: #00E5FF; /* Botón cyan brillante */
+    color: #000;
+    border: 3px solid #000;
+    border-radius: 0;
+    font-weight: 900;
+    text-transform: uppercase;
+    box-shadow: 6px 6px 0px #000;
+    transition: all 0.1s;
+}
+
+.btn-primary:hover {
+    background-color: #FF00FF; /* Cambia a rosa al pasar el mouse */
+    color: #FFF;
+    transform: translate(2px, 2px);
+    box-shadow: 4px 4px 0px #000;
 }
