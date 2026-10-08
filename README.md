@@ -57,8 +57,8 @@ Además, se implementaron validaciones reactivas, como la evaluación en tiempo 
 ### Pantalla de Login
 > Vista del portal de acceso donde se procesa la validación de credenciales.
 
-<!-- REEMPLAZA EL ENLACE DE ABAJO CON LA RUTA DE TU IMAGEN -->
-![Pantalla de Login](img/login.png) 
+<img width="697" height="573" alt="image" src="https://github.com/user-attachments/assets/a635857d-2a6f-40af-9863-f35ae464de52" />
+
 
 ### Dashboard Principal y SPA
 > Panel de control mostrando la pantalla de bienvenida y el funcionamiento del menú lateral.
