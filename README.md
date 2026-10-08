@@ -1,25 +1,76 @@
-SISTEMA DE CONTROL Y GESTION DE USUARIOS
+# Sistema de Control y Gestión de Usuarios
 
-INTEGRANTES DEL EQUIPO
-Carlos Yahel Aleman Cruz
-Mario Eduardo Grajales Ramirez
+> **Descripción:** Desarrollo de una aplicación web interactiva orientada al frontend que simula un entorno administrativo o panel de control (Dashboard). 
 
-DESCRIPCION DETALLADA DEL PROYECTO
-Este proyecto consiste en el desarrollo de una aplicación web interactiva orientada al frontend que simula un entorno administrativo o panel de control (Dashboard). El sistema está diseñado para demostrar conceptos fundamentales de seguridad del lado del cliente, persistencia de datos en el navegador y manipulación dinámica del Modelo de Objetos del Documento (DOM). En su versión final, el proyecto emula un comportamiento de Single Page Application (SPA), gestionando vistas independientes, notificaciones asíncronas y animaciones fluidas, todo sin requerir un backend de servidor.
+Este sistema está diseñado para demostrar conceptos fundamentales de seguridad del lado del cliente, persistencia de datos en el navegador y manipulación dinámica del DOM. En su versión final, el proyecto emula un comportamiento de Single Page Application (SPA), gestionando vistas independientes, notificaciones asíncronas y animaciones fluidas sin requerir un backend de servidor.
 
-TECNOLOGIAS Y HERRAMIENTAS UTILIZADAS
-Lenguajes base: HTML5 para la semántica del documento, CSS3 (con transiciones personalizadas para animaciones fluidas) y JavaScript (ES6) para toda la lógica de programación y eventos asíncronos.
-Framework visual: Bootstrap 5. Se implementó extensivamente para estructurar el sistema de rejillas, aplicar utilidades de Flexbox, diseñar el menú de navegación (Navbar), el menú lateral colapsable (Sidebar) y el renderizado avanzado de ventanas emergentes (Modales) y notificaciones flotantes (Toasts).
-Almacenamiento: Uso de la Web Storage API, específicamente LocalStorage, para mantener el estado de la sesión activa incluso si se recarga la página.
+---
 
-FLUJO DEL SISTEMA Y LOGICA DE PROGRAMACION
+## Integrantes del Equipo
 
-Motor de Autenticación y Enrutamiento (login.js)
-El punto de entrada es la pantalla de acceso. Se programó un event listener tipo 'submit' en el formulario que intercepta el envío por defecto usando la función preventDefault(). Tras verificar que los campos no se encuentren vacíos, el sistema captura el valor del correo electrónico, lo inyecta en la memoria local del navegador (localStorage.setItem) y ejecuta una redirección automática mediante window.location.href hacia el panel de control.
+| Nombre | Rol / Participación |
+| :--- | :---: |
+| **Carlos Yahel Alemán Cruz** | 50% |
+| **Mario Eduardo Grajales Ramírez** | 50% |
 
-Middleware de Protección y Datos de Sesión (sesion.js)
-Para evitar vulnerabilidades de acceso directo mediante la URL, el panel de control ejecuta un script de validación inmediato al cargar. Este lee el LocalStorage buscando la clave del usuario logueado. Si la consulta devuelve un valor nulo, la ejecución se interrumpe y expulsa al usuario devolviéndolo a la pantalla de login. Si la validación es exitosa, el sistema actualiza dinámicamente el contenido de la barra de navegación para darle la bienvenida al usuario activo.
+---
 
+## Tecnologías y Herramientas Utilizadas
+
+El proyecto se construyó utilizando **HTML5** para la semántica estructural y **CSS3** para las transiciones personalizadas. Toda la lógica de programación y los eventos asíncronos están desarrollados en **JavaScript ES6**.
+
+Como framework visual principal se implementó **Bootstrap 5**, aprovechando su sistema de rejillas, utilidades Flexbox y componentes preconstruidos como el menú de navegación (Navbar), el menú lateral colapsable (Sidebar), ventanas emergentes (Modales) y notificaciones flotantes (Toasts). Para el almacenamiento de la sesión, se utilizó la **Web Storage API** (específicamente LocalStorage), permitiendo mantener el estado del usuario activo incluso si se recarga la página.
+
+---
+
+## Flujo del Sistema y Lógica de Programación
+
+### 1. Motor de Autenticación y Enrutamiento (login.js)
+El formulario de acceso utiliza un escuchador de eventos que intercepta el envío por defecto. Tras verificar que los campos no estén vacíos, el sistema captura el correo electrónico, lo inyecta en la memoria local del navegador y ejecuta una redirección automática hacia el panel de control principal.
+
+### 2. Middleware de Protección y Sesión (sesion.js)
+Al cargar el panel, un script valida inmediatamente la existencia del usuario en el LocalStorage. Si la consulta devuelve un valor nulo, el usuario es expulsado y devuelto a la pantalla de login. En caso de éxito, el Navbar se actualiza dinámicamente inyectando el nombre del usuario activo.
+
+### 3. Librería de Validaciones (utileria.js)
+Se desarrolló un módulo independiente para garantizar la integridad de los datos. Incluye funciones que evalúan el correo electrónico mediante una Expresión Regular estricta y aseguran que la contraseña capturada cumpla con una longitud mínima de 6 caracteres.
+
+### 4. Interacciones del Dashboard (dashboard.js)
+El panel central funciona bajo el concepto de Single Page Application (SPA), manipulando clases CSS para ocultar o mostrar los distintos formularios de captura sin recargar la página. El menú lateral cuenta con transiciones fluidas de ancho y opacidad para mejorar la experiencia de usuario. 
+
+Además, se implementaron validaciones reactivas, como la evaluación en tiempo real de los 6 dígitos del Número de Control, y una calculadora lógica que determina la mayoría de edad e inyecta el resultado directamente dentro de un Modal interactivo de Bootstrap. Las notificaciones del sistema se manejan a través de Toasts.
+
+---
+
+## Proceso de Creación y Desarrollo
+
+1. Construcción de la arquitectura base del login y almacenamiento de sesión en JavaScript.
+2. Diseño del esqueleto HTML principal y montaje de la barra de navegación superior.
+3. Segmentación de la pantalla para el menú lateral colapsable y los contenedores de los formularios.
+4. Maquetación de tarjetas de captura y conexión con la librería global de validaciones.
+5. Desarrollo de la lógica condicional del número de control y la calculadora de edad vinculada al Modal.
+6. Pulido de la interfaz, separando las vistas internas e implementando alertas dinámicas.
+
+---
+
+## Capturas de Pantalla del Sistema
+
+### Pantalla de Login
+> Vista del portal de acceso donde se procesa la validación de credenciales.
+
+<!-- REEMPLAZA EL ENLACE DE ABAJO CON LA RUTA DE TU IMAGEN -->
+![Pantalla de Login](img/login.png) 
+
+### Dashboard Principal y SPA
+> Panel de control mostrando la pantalla de bienvenida y el funcionamiento del menú lateral.
+
+<!-- REEMPLAZA EL ENLACE DE ABAJO CON LA RUTA DE TU IMAGEN -->
+![Dashboard Principal](img/dashboard.png)
+
+### Notificaciones y Modales
+> Ejecución de componentes Bootstrap: Toasts de validación y Modales de cálculo de edad.
+
+<!-- REEMPLAZA EL ENLACE DE ABAJO CON LA RUTA DE TU IMAGEN -->
+![Modales y Toasts](img/modal.png)
 Librería de Validaciones (utileria.js)
 Se construyó un módulo independiente para garantizar la integridad de los datos capturados:
 
