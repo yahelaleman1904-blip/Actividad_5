@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebar = document.getElementById('sidebar');
 
     btnHamburguesa.addEventListener('click', () => {
-        sidebar.style.display = sidebar.style.display === 'none' ? 'block' : 'none';
+        sidebar.classList.toggle('sidebar-oculto');
     });
 
     document.getElementById('formCaptura').addEventListener('submit', (e) => {
@@ -43,4 +43,4 @@ document.addEventListener('DOMContentLoaded', () => {
         const modal = new bootstrap.Modal(document.getElementById('modalEdad'));
         modal.show();
     });
-}); 
+});
