@@ -42,33 +42,38 @@
     </nav>
 
     <div class="d-flex" style="min-height: calc(100vh - 56px);">
-        <!-- Sidebar -->
+        
         <div id="sidebar" class="bg-dark text-white p-3" style="width: 250px;">
             <ul class="nav flex-column">
                 <li class="nav-item">
                     <a class="nav-link text-white dropdown-toggle" href="#" data-bs-toggle="collapse" data-bs-target="#menuUsuarios">Usuarios</a>
                     <div class="collapse" id="menuUsuarios">
-                        <!-- Enlace que mostrará los formularios -->
                         <ul class="nav flex-column ms-3">
                             <li><a class="nav-link text-light" href="#" id="linkCaptura">Captura</a></li>
+                        </ul>
+                    </div>
+                </li>
+                
+                <li class="nav-item mt-2">
+                    <a class="nav-link text-white dropdown-toggle" href="#" data-bs-toggle="collapse" data-bs-target="#menuAlumnos">Alumnos</a>
+                    <div class="collapse" id="menuAlumnos">
+                        <ul class="nav flex-column ms-3">
+                            <li><a class="nav-link text-light" href="#" id="linkRegistro">Registro</a></li>
                         </ul>
                     </div>
                 </li>
             </ul>
         </div>
 
-        <!-- Contenido principal -->
         <div class="p-4 w-100">
             
-            <!-- NUEVO: Mensaje de Bienvenida Inicial -->
             <div id="mensajeBienvenida" class="text-center mt-5">
                 <h1 class="display-4 text-primary fw-bold">Bienvenido al sistema</h1>
                 <p class="fs-5 mt-3 text-secondary">Todos los derechos reservados a Carlos Yahel y Mario Eduardo</p>
             </div>
 
-            <!-- CONTENEDOR MODIFICADO: Agrupa los formularios y los oculta inicialmente -->
-            <div id="contenedorFormularios" class="d-none">
-                <div id="seccionCaptura" class="card mb-4">
+            <div id="seccionCapturaUsuarios" class="d-none">
+                <div class="card mb-4">
                     <div class="card-header bg-primary text-white">Captura de Usuarios</div>
                     <div class="card-body">
                         <form id="formCaptura">
@@ -88,7 +93,9 @@
                         </form>
                     </div>
                 </div>
+            </div>
 
+            <div id="seccionRegistroAlumnos" class="d-none">
                 <div class="card">
                     <div class="card-header bg-info text-white">Registro de Alumnos</div>
                     <div class="card-body">
@@ -111,7 +118,6 @@
         </div>
     </div>
 
-    <!-- Modal -->
     <div class="modal fade" id="modalEdad" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">

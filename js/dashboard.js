@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Referencias al menú y animación
+    
     const btnHamburguesa = document.getElementById('btnHamburguesa');
     const sidebar = document.getElementById('sidebar');
 
@@ -7,18 +7,26 @@ document.addEventListener('DOMContentLoaded', () => {
         sidebar.classList.toggle('sidebar-oculto');
     });
 
-    // NUEVO: Lógica para mostrar los formularios al dar clic en Captura
     const linkCaptura = document.getElementById('linkCaptura');
+    const linkRegistro = document.getElementById('linkRegistro');
     const mensajeBienvenida = document.getElementById('mensajeBienvenida');
-    const contenedorFormularios = document.getElementById('contenedorFormularios');
+    const seccionCapturaUsuarios = document.getElementById('seccionCapturaUsuarios');
+    const seccionRegistroAlumnos = document.getElementById('seccionRegistroAlumnos');
 
     linkCaptura.addEventListener('click', (e) => {
-        e.preventDefault(); // Evita que la página salte hacia arriba
-        mensajeBienvenida.classList.add('d-none'); // Oculta el texto central
-        contenedorFormularios.classList.remove('d-none'); // Muestra los formularios
+        e.preventDefault(); 
+        mensajeBienvenida.classList.add('d-none'); 
+        seccionRegistroAlumnos.classList.add('d-none'); 
+        seccionCapturaUsuarios.classList.remove('d-none'); 
     });
 
-    // Lógica del formulario de captura
+    linkRegistro.addEventListener('click', (e) => {
+        e.preventDefault(); 
+        mensajeBienvenida.classList.add('d-none'); 
+        seccionCapturaUsuarios.classList.add('d-none'); 
+        seccionRegistroAlumnos.classList.remove('d-none'); 
+    });
+
     document.getElementById('formCaptura').addEventListener('submit', (e) => {
         e.preventDefault();
         const correo = document.getElementById('capCorreo').value;
@@ -32,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Lógica del número de control
     document.getElementById('numControl').addEventListener('input', (e) => {
         const errorMensaje = document.getElementById('errorControl');
         if (e.target.value.length !== 6) {
@@ -42,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Lógica del modal de edad
     document.getElementById('btnVerificarEdad').addEventListener('click', () => {
         const edad = parseInt(document.getElementById('edadAlumno').value);
         const mensaje = document.getElementById('mensajeModalEdad');
