@@ -118,6 +118,19 @@
         </div>
     </div>
 
+    <!-- Contenedor del Toast Flotante -->
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div id="notificacionToast" class="toast align-items-center text-white border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body fs-6" id="mensajeToast">
+                    <!-- El mensaje se insertará por JS -->
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Edad -->
     <div class="modal fade" id="modalEdad" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">

@@ -27,16 +27,27 @@ document.addEventListener('DOMContentLoaded', () => {
         seccionRegistroAlumnos.classList.remove('d-none'); 
     });
 
+    // Referencias para el Toast
+    const toastElement = document.getElementById('notificacionToast');
+    const mensajeToast = document.getElementById('mensajeToast');
+    const notificacion = new bootstrap.Toast(toastElement);
+
     document.getElementById('formCaptura').addEventListener('submit', (e) => {
         e.preventDefault();
         const correo = document.getElementById('capCorreo').value;
         const password = document.getElementById('capPassword').value;
 
+        toastElement.classList.remove('bg-success', 'bg-danger');
+
         if (validarCorreo(correo) && validarPassword(password)) {
-            alert('Usuario capturado correctamente');
+            toastElement.classList.add('bg-success');
+            mensajeToast.textContent = 'Usuario capturado correctamente';
+            notificacion.show();
             e.target.reset();
         } else {
-            alert('Error: Verifica que el correo sea válido y la contraseña tenga al menos 6 caracteres.');
+            toastElement.classList.add('bg-danger');
+            mensajeToast.textContent = 'Error: Verifica que el correo sea válido y la contraseña tenga al menos 6 caracteres.';
+            notificacion.show();
         }
     });
 
